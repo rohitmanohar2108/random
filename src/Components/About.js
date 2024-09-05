@@ -199,32 +199,35 @@ const About = () => {
               </p>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 ml-">
-            <CircularTimeline
-              percentage={90}
-              title="Web Development"
-              description="Experienced in building web applications using React and other modern web technologies."
-            />
-            <CircularTimeline
-              percentage={50}
-              title="Data Structures & Algorithms"
-              description="Decent problem-solving using DSA, with experience in programming."
-            />
-            <CircularTimeline
-              percentage={75}
-              title="Graphic UI Design"
-              description="Skilled in designing intuitive user interfaces and experiences with a focus on user-centric design."
-            />
-            <CircularTimeline
-              percentage={85}
-              title="Front-End Development"
-              description="Specialized in creating responsive, dynamic, and interactive user interfaces using React and Tailwind-CSS."
-            />
+          
+          
+            {/* CircularTimeline Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 m-auto">
+            
+              <CircularTimeline
+                percentage={90}
+                title="Web Development"
+                description="Experienced in building web applications using React and other modern web technologies."
+              />
+              <CircularTimeline
+                percentage={50}
+                title="Data Structures & Algorithms"
+                description="Decent problem-solving using DSA, with experience in programming."
+              />
+              <CircularTimeline
+                percentage={75}
+                title="Graphic UI Design"
+                description="Skilled in designing intuitive user interfaces and experiences with a focus on user-centric design."
+              />
+              <CircularTimeline
+                percentage={85}
+                title="Front-End Development"
+                description="Specialized in creating responsive, dynamic, and interactive user interfaces using React and Tailwind-CSS."
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
     
   );
 };
