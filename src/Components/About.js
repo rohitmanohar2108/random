@@ -85,9 +85,9 @@ const About = () => {
           <h2 className="text-6xl font-acme text-pink-600">What I Am Doing</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-28 p-6 m-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-28 h-3/5 w-3/5 ml-72 ">
           {/* Box 1: Web Design */}
-          <div className="relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
+          <div className="border relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{
@@ -108,7 +108,7 @@ const About = () => {
           </div>
 
           {/* Box 2: Web Development */}
-          <div className="relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
+          <div className="border relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{
@@ -131,7 +131,7 @@ const About = () => {
           </div>
 
           {/* Box 3: Software Development */}
-          <div className="relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
+          <div className="border relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{
@@ -154,7 +154,7 @@ const About = () => {
           </div>
 
           {/* Box 4: Front-End */}
-          <div className="relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
+          <div className="border relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{
