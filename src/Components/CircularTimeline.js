@@ -5,13 +5,13 @@ const CircularTimeline = ({ percentage, title, description }) => {
   const circleRef = useRef(null);
   const barRef = useRef(null);
   const percentageRef = useRef(null);
-  const containerRef = useRef(null); // Reference to the container div
-  const titleRef = useRef(null); // Reference to the title element
-  const descriptionRef = useRef(null); // Reference to the description element
-  const [inView, setInView] = useState(false); // State to track if the component is in view
+  const containerRef = useRef(null); 
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const [inView, setInView] = useState(false);
 
-  const radius = 50; // Radius of the circle
-  const circumference = 2 * Math.PI * radius; // Circumference of the circle
+  const radius = 50; 
+  const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +39,6 @@ const CircularTimeline = ({ percentage, title, description }) => {
     if (inView) {
       const offset = circumference - (percentage / 100) * circumference;
 
-      // Animate the circle's strokeDashoffset to show the progress
       gsap.fromTo(
         circleRef.current,
         { strokeDashoffset: circumference },
@@ -47,11 +46,9 @@ const CircularTimeline = ({ percentage, title, description }) => {
           strokeDashoffset: offset,
           duration: 2,
           ease: "power2.out",
-          
         }
       );
 
-      // Animate the percentage number counting up
       gsap.fromTo(
         percentageRef.current,
         { innerText: 0 },
@@ -66,7 +63,6 @@ const CircularTimeline = ({ percentage, title, description }) => {
         }
       );
 
-      // Animate the revolving yellow bar
       gsap.to(barRef.current, {
         rotation: 360,
         repeat: -1,
@@ -74,7 +70,6 @@ const CircularTimeline = ({ percentage, title, description }) => {
         ease: "linear",
       });
 
-      // Animate the title
       gsap.from(titleRef.current, {
         opacity: 0,
         y: -20,
@@ -83,7 +78,6 @@ const CircularTimeline = ({ percentage, title, description }) => {
         ease: "power2.out",
       });
 
-      // Animate the description
       gsap.from(descriptionRef.current, {
         opacity: 0,
         y: 20,
@@ -95,7 +89,7 @@ const CircularTimeline = ({ percentage, title, description }) => {
   }, [inView, circumference, percentage]);
 
   return (
-    <div className="flex flex-col items-center mb-8" ref={containerRef}>
+    <div className="flex flex-col items-center mb-8 text-center" ref={containerRef}>
       <div className="relative w-32 h-32">
         <svg width="120" height="120">
           <circle className="circle-bg" cx="60" cy="60" r={radius} />
@@ -126,13 +120,13 @@ const CircularTimeline = ({ percentage, title, description }) => {
         ></div>
       </div>
       <h3
-        className="text-white text-3xl mt-4 font-acme"
+        className="text-white text-2xl mt-4 font-bold font-acme w-64"
         ref={titleRef}
       >
         {title}
       </h3>
       <p
-        className="text-gray-400 text-sm font-roboto "
+        className="text-gray-400 text-sm mt-2 font-roboto max-w-xs w-64"
         ref={descriptionRef}
       >
         {description}

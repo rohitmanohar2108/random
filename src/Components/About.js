@@ -199,7 +199,8 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-60 ml-20">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 ml-">
             <CircularTimeline
               percentage={90}
               title="Web Development"
@@ -224,6 +225,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
