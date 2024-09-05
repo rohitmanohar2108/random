@@ -288,4 +288,42 @@ body{
   /* Add this to your main CSS file or your component-specific CSS */
 
 
+  .circular-progress {
+    position: relative;
+  }
   
+  .circular-progress svg {
+    transform: rotate(-90deg); /* Rotate the SVG to start the progress at the top */
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #e6e6e6; /* Light gray background for the circle */
+    stroke-width: 10;
+  }
+  
+  .circle {
+    fill: none;
+    stroke: #FEBE10; /* Main progress color */
+    stroke-width: 10;
+    stroke-dasharray: 314; /* Circumference value */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s;
+  }
+  
+  .bar {
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 314; /* Circumference value */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s;
+  }
+  
+  .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+  }
