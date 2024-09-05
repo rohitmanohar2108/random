@@ -1,13 +1,36 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaCode, FaPaintBrush, FaCogs, FaLaptopCode } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const lettersRef = useRef([]);
+  const skillBoxesRef = useRef([]);
+
+  useEffect(() => {
+    gsap.fromTo(
+      skillBoxesRef.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.3,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: skillBoxesRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="min-h-screen bg-black relative z-10">
-        
       {/* Background animation */}
       <div className="absolute inset-0 mb-96">
         <div className="area">
@@ -36,10 +59,9 @@ const About = () => {
                   <span
                     key={index}
                     ref={(el) => (lettersRef.current[index] = el)}
-                    className="inline-block" // inline-block prevents line breaks
+                    className="inline-block"
                   >
                     {char === " " ? "\u00A0" : char}{" "}
-                    {/* Non-breaking space for spaces */}
                   </span>
                 ))}
               </div>
@@ -81,11 +103,14 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="text-center mt-32  font-acme">
+        <div className="text-center mt-32 font-acme">
           <h2 className="text-6xl font-acme text-pink-600">What I Am Doing</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-28 h-3/5 w-3/5 ml-72 ">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-28 h-3/5 w-3/5 ml-72"
+          ref={(el) => (skillBoxesRef.current = el)}
+        >
           {/* Box 1: Web Design */}
           <div className="border relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
