@@ -4,7 +4,7 @@ import './Header'
 
 const Header = () => {
   return (
-    <header className="bg-black text-white p-4">
+    <header className="bg-purple-500 text-white p-4">
       <nav className="container mx-auto flex justify-between items-center">
         <ul className="flex space-x-4">
           <li><Link to="/" className="hover:text-gray-400">About</Link></li>
