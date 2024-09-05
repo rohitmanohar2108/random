@@ -173,7 +173,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5; /* Ensure it's above .lines */
-    color: yellow; /* Adjust text color if needed */
+    color:yellow; /* Adjust text color if needed */
     font-size: 5rem; /* Adjust font size as needed */
     text-align: center;
     font-family: 'Acme', sans-serif; /* Ensure you have the Acme font loaded */
@@ -304,7 +304,7 @@ body{
   
   .circle {
     fill: none;
-    stroke: #FEBE10; /* Main progress color */
+    stroke: #f70776; /* Main progress color */
     stroke-width: 10;
     stroke-dasharray: 314; /* Circumference value */
     stroke-dashoffset: 0;

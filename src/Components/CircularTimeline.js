@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CircularTimeline = ({ percentage, title, description }) => {
   const circleRef = useRef(null);
@@ -8,6 +11,7 @@ const CircularTimeline = ({ percentage, title, description }) => {
   const containerRef = useRef(null); 
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
+  const skillBoxesRef = useRef(null); // New ref for skillBoxes animation
   const [inView, setInView] = useState(false);
 
   const radius = 50; 
@@ -88,6 +92,29 @@ const CircularTimeline = ({ percentage, title, description }) => {
     }
   }, [inView, circumference, percentage]);
 
+  // Scroll-triggered animation
+  useEffect(() => {
+    if (skillBoxesRef.current) {
+      gsap.fromTo(
+        skillBoxesRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.3,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: skillBoxesRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <div className="flex flex-col items-center mb-8 text-center" ref={containerRef}>
       <div className="relative w-32 h-32">
@@ -110,7 +137,8 @@ const CircularTimeline = ({ percentage, title, description }) => {
             strokeDashoffset={circumference}
             ref={barRef}
             strokeWidth="8"
-            stroke="#f5a623"
+            stroke="#f70776"
+           
             fill="none"
           />
         </svg>
@@ -131,6 +159,9 @@ const CircularTimeline = ({ percentage, title, description }) => {
       >
         {description}
       </p>
+      <div className="skill-boxes" ref={skillBoxesRef}>
+        {/* Skill Boxes or other content */}
+      </div>
     </div>
   );
 };

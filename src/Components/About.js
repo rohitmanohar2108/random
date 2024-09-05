@@ -38,7 +38,7 @@ const About = () => {
       <div className="relative z-20">
         <div className="behind-content">
           <div className="text-overlay">
-            <div className="font-acme text-9xl mt-96 text-violet-600">
+            <div className="font-acme text-9xl mt-96 text-pink-600">
               <div>
                 {"Hi There!".split("").map((char, index) => (
                   <span
@@ -185,10 +185,10 @@ const About = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <h2 className="text-6xl font-acme text-white mb-12 ml-96">
+            <h2 className="text-6xl font-acme text-pink-600 mb-12 ml-96">
               Skills
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 m-auto w-3/4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72  w-3/4">
               <CircularTimeline
                 percentage={90}
                 title="Web Development"
