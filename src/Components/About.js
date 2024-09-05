@@ -33,22 +33,6 @@ const About = () => {
   return (
     <div className="min-h-screen bg-black relative z-10">
       {/* Background animation */}
-      <div className="absolute inset-0 mb-96">
-        <div className="area">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
 
       {/* Content */}
       <div className="relative z-20">
@@ -199,11 +183,12 @@ const About = () => {
               </p>
             </div>
           </div>
-          
-          
-            {/* CircularTimeline Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 m-auto">
-            
+
+          <div className="mt-12 text-center">
+            <h2 className="text-6xl font-acme text-white mb-12 ml-96">
+              Skills
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-72 m-auto w-3/4">
               <CircularTimeline
                 percentage={90}
                 title="Web Development"
@@ -228,7 +213,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    
+    </div>
   );
 };
 
