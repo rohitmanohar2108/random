@@ -7,6 +7,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-black relative z-10">
+        
       {/* Background animation */}
       <div className="absolute inset-0 mb-96">
         <div className="area">
@@ -80,7 +81,11 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-32">
+        <div className="text-center mt-32  font-acme">
+          <h2 className="text-6xl font-acme text-pink-600">What I Am Doing</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-28 p-6 m-6">
           {/* Box 1: Web Design */}
           <div className="relative p-6 rounded-lg flex flex-col items-center text-center skill-box font-acme group overflow-hidden">
             <div
